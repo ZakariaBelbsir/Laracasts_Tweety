@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tweet;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
 class TweetController extends Controller
@@ -22,5 +23,11 @@ class TweetController extends Controller
             'body' => request('body')
         ]);
         return redirect()->route('home');
+    }
+
+    public function destroy(Tweet $tweet)
+    {
+        $tweet->delete();
+        return back();
     }
 }
