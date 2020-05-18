@@ -20,7 +20,6 @@ trait Likable
         );
     }
 
-
     public function like($user=null, $liked=true)
     {
         $this->likes()->updateOrCreate([
@@ -52,4 +51,5 @@ trait Likable
     {
         return (bool) $user->likes->where('tweet_id', $this->id)->where('liked', false)->count();
     }
+
 }

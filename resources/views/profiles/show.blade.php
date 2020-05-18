@@ -2,7 +2,7 @@
     <div>
         <header class="mb-6 w-full relative">
             <div class="relative">
-                <img src="/image/banner.jpg" class="rounded-lg h-64 w-full mb-2" alt="">
+                <img src="{{$user->banner}}" class="rounded-lg h-64 w-full mb-2" alt="">
                 <img src="{{ $user->avatar  }}" alt="your avatar"
                      class="rounded-full mr-3 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
                      style="left:50%;"
@@ -20,10 +20,7 @@
                     <x-follow_button :user="$user"></x-follow_button>
                 </div>
             </div>
-            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A error nisi nostrum nulla odit, quo quos temporibus. Cumque dignissimos
-                distinctio error ipsam iste obcaecati perferendis quia reiciendis.
-                Adipisci consequatur dolore earum est eveniet excepturi exercitationem.</p>
+            <p class="text-sm">{{$user->description? $user->description : 'No description yet.'}}</p>
         </header>
         <hr>
         @include('_feed', ['tweets' => $tweets])

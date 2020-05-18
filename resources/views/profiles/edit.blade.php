@@ -18,15 +18,35 @@
             @enderror
         </div>
 
+        <div class="mb-6">
+            <label for="description" class="block mb-2 uppercase font-bold text-xs text-gray-700">Description</label>
+            <textarea name="description" id="description" class="w-full border border-gray-400 p-2"></textarea>
+            @error('description')
+            <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+            @enderror
+        </div>
+
         <div>
             <div class="mb-6">
                 <label for="avatar" class="block mb-2 uppercase font-bold text-xs text-gray-700">Avatar</label>
                 <div class="flex">
                     <input type="file" name="avatar" id="avatar" class="border border-gray-400 p-2 w-full">
                     <img src="{{$user->avatar}}" alt="your avatar" width="40">
-
                 </div>
                 @error('avatar')
+                <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                @enderror
+            </div>
+        </div>
+
+        <div>
+            <div class="mb-6">
+                <label for="banner" class="block mb-2 uppercase font-bold text-xs text-gray-700">Banner</label>
+                <div class="flex">
+                    <input type="file" name="banner" id="banner" class="border border-gray-400 p-2 w-full">
+                    <img src="{{$user->banner}}" alt="your banner" width="40">
+                </div>
+                @error('banner')
                 <p class="text-red-500 text-xs mt-2">{{$message}}</p>
                 @enderror
             </div>

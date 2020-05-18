@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable, Followable;
 
     protected $fillable = [
-        'name', 'email', 'password','username','avatar'
+        'name', 'email', 'password','username','avatar', 'banner', 'description'
     ];
 
     protected $hidden = [
@@ -25,6 +25,11 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         return asset($value ? '/storage/'.$value : '/image/default.jpg');
+    }
+
+    public function getBannerAttribute($value)
+    {
+        return asset($value ? '/storage/'.$value : '/image/banner.jpg');
     }
 
 
