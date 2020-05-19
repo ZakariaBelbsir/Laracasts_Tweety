@@ -13,5 +13,8 @@ class Tweet extends Model
         return $this->belongsTo(User::class);
     }
 
-
+    public function getImageAttribute($value)
+    {
+        return asset($value ? '/storage/'.$value : '');
+    }
 }

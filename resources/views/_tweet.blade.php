@@ -18,7 +18,8 @@
                     </form>
                 @endcan
             </div>
-            <x-like-buttons :tweet="$tweet" />
+            <img src="{{$tweet->image}}" alt="" class="my-4 ">
+            <x-like-buttons :tweet="$tweet"/>
         </div>
 
     </div>
